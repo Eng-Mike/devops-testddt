@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('sonacloud analysis'){
                 steps{
-                     withSonarQubeEnv('sanarcloud'){
+                     withSonarQubeEnv('sonarcloud'){
                         sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Eng-Mike_devops-testddt'
 
                      }
