@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('sonacloud analysis'){
+            withSonarQubeEnv('sanarcloud'){
+                steps{
+                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Eng-Mike_devops-testddt'
+
+            }
+            }
+            
+        }
+    }
+}
